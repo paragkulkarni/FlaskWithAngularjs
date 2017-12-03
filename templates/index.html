@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="en" data-ng-app>
+  <head>
+    <meta charset="utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    
+
+   <link rel="stylesheet" type="text/css" href="static/style.css">
+
+    <title>Flask-Triangle - Tutorial</title>
+  </head>
+  <body>
+   
+<nav class="navbar navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">SlightGen Solutions</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Product</a></li>
+      
+      <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Gallery
+    <span class="caret"></span></a>
+    <ul class="dropdown-menu">
+      <li><a href="#">Academics project</a></li>
+      <li><a href="#">SlightGen products</a></li>
+      <li><a href="#">Other</a></li> 
+    </ul>
+  </li>
+
+
+
+
+
+
+      
+
+
+           <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Projects
+    <span class="caret"></span></a>
+    <ul class="dropdown-menu">
+      <li><a href="#">Academics project</a></li>
+      <li><a href="#">Industrial products</a></li>
+      <li><a href="#">Home Automation Projects</a></li>
+      <li><a href="#">Agriculture projects</a></li> 
+    </ul>
+  </li>
+
+
+
+
+      <li><a href="#">About us</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    
+  </div>
+</nav>
+
+<br>
+<br>
+<br>
+<br>
+
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="/static/images/1.jpg" style="width:100%; height:300px">
+  <div class="text">Caption Text</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="/static/images/2.jpg" style="width:100%; height:300px">
+  <div class="text">Caption Two</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="/static/images/3.jpg" style="width:100%; height:300px">
+  <div class="text">Caption Three</div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+  
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+<div class="container" style="margin-top:50px">
+ 
+
+
+
+  <div class="row">
+    <div class="col-xs-3">
+      <img src="/static/images/index_emb_sys.png" class="img-rounded" alt="Cinque Terre" width="200" height="200"> 
+      <h4>Embedded system solutions</h4>
+      <p>We deal in development of customized computing system with dedicated functions as per requirements of the client</p>
+      
+    </div>
+    <div class="col-xs-3"> 
+      <img src="/static/images/index_indus_sys.png" class="img-rounded" alt="Cinque Terre" width="200" height="200">
+      <h4>Industrial/Home Automation</h4>
+      <p>We create advanced solutions for the data acquisition and analysis, system monitoring & control systems.</p>
+    </div>
+    
+    <div class="col-xs-3"> 
+      <img src="/static/images/index_RD_icon.jpg" class="img-rounded" alt="Cinque Terre" width="200" height="200"> 
+      <h4>R&D Consultation</h4>
+      <p>Our experts for research & development consultation and product development believe in providing the best services to our clients from the very first step to every other necessary.</p>
+
+   </div>
+    <div class="col-xs-3"> 
+      <img src="/static/images/index_train.png" class="img-rounded" alt="Cinque Terre" width="200" height="200">
+      <h4>Project guidence & Training</h4>
+      <p>Training for understanding basics , complex research methodologies involved in the development of academic projects and practical skills development.</p>
+          </div>
+  </div>
+
+
+
+</div>
+
+<h1>Scroll this page to see the effect</h1>
+
+   <h1>hrlo</h1>
+    <md-progress-linear md-mode="indeterminate"></md-progress-linear>
+    <label>Name:</label>
+    <input type="text" data-ng-model="yourName" placeholder="Enter a name here">
+    <hr>
+    <h1>Hello {{yourName|angular}}!</h1>
+
+</div>
+</div>
+  </body>
+</html>
